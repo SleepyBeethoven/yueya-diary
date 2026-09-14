@@ -1,33 +1,67 @@
 # Product Screenshots
 
-### 1. Daily Dashboard
+This folder contains real screenshots from the Yueya Diary WeChat Mini Program.
 
-![Yueya Diary home dashboard](assets/01-home-dashboard.png)
+The product interface is intentionally kept in Chinese because the target users are Chinese families using the WeChat ecosystem.
 
-The home screen organises childcare activities into three simple categories: eating, sleeping and playing, with additional quick actions for diaper changes and daily notes.
+## Current Screenshots
 
-It also gives parents a quick overview of feeding, sleep and unanswered questions, while keeping a chronological record of the day's activities.
+### `01-home-dashboard.png`
 
----
+Shows the main Yueya Diary dashboard.
 
-### 2. Feeding Record
+The interface groups daily childcare activities into three main categories:
 
-![Record feeding in Yueya Diary](assets/02-record-feeding.png)
+- 吃 / Eat
+- 睡 / Sleep
+- 玩 / Play
 
-The feeding workflow was designed around real childcare behaviour rather than generic form inputs.
+It also includes quick access to diaper-change records, daily notes, summary information and chronological activity history.
 
-For example, milk volume is selected using structured increments that reflect how bottle feeding is actually recorded, instead of asking caregivers to type arbitrary values.
+This screenshot demonstrates the overall product structure and how the first version keeps daily childcare tracking simple and easy to scan.
 
-The interface also prevents obviously invalid interactions such as selecting a future time for an activity that has not happened yet.
+### `02-record-feeding.png`
 
----
+Shows the milk-feeding recording workflow.
 
-### 3. Parent–Caregiver Communication
+This screen reflects several product decisions based on real childcare behaviour:
 
-![Parent caregiver Q&A](assets/03-parent-caregiver-qa.png)
+- feeding volume is selected through structured values rather than arbitrary text input;
+- the interaction is designed around realistic bottle-feeding measurements;
+- time validation prevents users from accidentally recording an activity in the future.
 
-One of the core differences between Yueya Diary and a standard baby-tracking app is the communication layer.
+This screenshot demonstrates interaction design and data-quality thinking rather than only visual UI design.
 
-Parents can raise questions about individual childcare records, and caregivers can respond directly inside the same record context.
+### `03-parent-caregiver-qa.png`
 
-This creates a traceable conversation around specific events instead of relying on fragmented WeChat messages or verbal follow-up.
+Shows the parent–caregiver question and response workflow.
+
+Parents can raise questions about a specific childcare record, and the caregiver can respond within the same context.
+
+This is one of the key differences between Yueya Diary and a standard baby-tracking app.
+
+Instead of relying on fragmented WeChat messages, questions remain connected to the original childcare event, making later review clearer and more traceable.
+
+## Why These Screenshots Were Selected
+
+Together, these three screenshots demonstrate three different parts of the product:
+
+1. overall product structure;
+2. detailed interaction design;
+3. the core parent–caregiver collaboration feature.
+
+The goal is not to show every screen in the Mini Program, but to provide enough evidence for someone reviewing the project to understand the product logic quickly.
+
+## Privacy Checklist
+
+Before publishing additional screenshots, check that they do not expose:
+
+- WeChat IDs;
+- phone numbers;
+- real baby names;
+- personal family photos;
+- QR codes;
+- Mini Program AppID or secret values;
+- cloud environment credentials;
+- private test-user information;
+- sensitive family data.
