@@ -1,8 +1,8 @@
 # 悦芽日记 (Yueya Diary)
 
-A WeChat Mini Program designed for Chinese families to track daily childcare activities and improve communication between parents and hired childcare workers.
+A WeChat Mini Program designed for Chinese families to make daily childcare more visible, structured and easier to communicate between parents and hired childcare workers.
 
-> The product itself is intentionally Chinese-only because it was designed specifically for users in the WeChat ecosystem and for a childcare scenario that is common in China.
+> The product itself is intentionally Chinese-only because it was designed specifically for families in the WeChat ecosystem and for a childcare scenario that is common in China.
 
 [中文说明](README.zh-CN.md)
 
@@ -10,107 +10,171 @@ A WeChat Mini Program designed for Chinese families to track daily childcare act
 
 Yueya Diary started from a real family problem.
 
-When both parents need to work, it can be difficult to know what is happening with the baby throughout the day. At the same time, managing a hired childcare worker (育儿嫂) can feel awkward: parents want more visibility, but they do not want every interaction to become a direct check or confrontation.
+As my wife was preparing to return to work after parental leave, one concern kept coming up:
 
-In China, a “育儿嫂” is a professional childcare worker hired by families to assist with infant care.
+> “When I am not there, how do I know what is actually happening with the baby?”
 
-The idea behind Yueya Diary is simple:
+In many Chinese families, a 育儿嫂 is hired to assist with infant care. While this can solve the practical problem of childcare, it creates another one: parents want visibility into the baby's day, but they do not want every interaction with the caregiver to feel like supervision or confrontation.
 
-- make daily childcare activity visible;
-- reduce the anxiety caused by not being physically present;
-- create a consistent record of the baby’s routine;
-- make handover easier when childcare workers change;
-- build a long-term childcare data history for the family.
+Existing baby-tracking apps can record plenty of information, but they are often designed primarily for individual logging rather than structured parent–caregiver collaboration.
+
+Yueya Diary was built around that gap.
+
+The goal is not simply to collect more data. It is to reduce uncertainty.
 
 ## The Problem
 
-Traditional childcare communication often depends on fragmented messages, verbal updates, handwritten notes, or memory.
+Traditional communication between parents and caregivers often depends on fragmented WeChat messages, verbal updates, handwritten notes or memory.
 
-This creates several problems:
+That makes it difficult to answer simple questions later:
 
-- Parents cannot easily review the whole day at a glance.
-- Important details can be forgotten or recorded inconsistently.
-- It is difficult to compare routines across different days or caregivers.
-- Parents may feel anxious because they do not know what is happening while they are at work.
-- When a childcare worker changes, there is often no structured historical record.
+- How much milk did the baby drink today?
+- How long did the baby sleep?
+- What food was introduced?
+- Was anything unusual?
+- Why did a particular event happen?
+- Has the baby's routine changed over time?
+
+It also becomes harder when a family changes caregivers, because much of the previous childcare history disappears with the person who remembered it.
+
+Yueya Diary turns these daily events into a structured, reviewable childcare record.
 
 ## Product Concept
 
-Yueya Diary turns daily childcare into a lightweight, structured check-in workflow inside WeChat.
+The product separates the experience into two roles:
 
-The caregiver records activities during the day, and parents can review them later in one place.
+- parents;
+- childcare workers.
 
-The product is designed to feel like a practical family tool rather than an employee monitoring system.
+Caregivers focus on quickly recording what happened during the day.
+
+Parents focus on reviewing those records, understanding the baby's routine and asking questions when something needs clarification.
+
+The intention is to create visibility without turning the product into an employee-monitoring system.
 
 ## Core Features
 
-The first version includes structured tracking for:
+The first working version includes:
 
 - milk feeding time and volume;
-- solid food type and allergy confirmation;
-- sleep time;
-- soothing / sleep methods;
-- gross motor activity;
+- solid food and allergy confirmation;
+- sleep records;
+- soothing and sleep methods;
+- gross motor activities;
 - bathing;
-- music / listening activities;
+- music and listening activities;
 - reading time, book title and pages;
 - mood;
 - body temperature;
 - bowel movement colour and form;
 - outdoor walks;
-- notes;
+- diaper-change records;
+- daily notes;
 - date-based history review;
-- support for one or more childcare workers;
+- parent and caregiver user roles;
+- record-level parent questions and caregiver responses;
+- support for family groups;
+- cloud-based record storage;
+- support for one or more caregivers;
 - data export.
 
 ## Product Philosophy
 
-The key product insight is that this is not only a data-recording tool.
+The most important product insight is that this is not only a data-recording tool.
 
 It is also an emotional product.
 
-For working parents, especially mothers returning to work after parental leave, the problem is often not simply “I need more data.” The deeper problem is:
+For a parent returning to work, the deeper problem is often not:
+
+> “I need more childcare data.”
+
+It is:
 
 > “I cannot be there, so I do not know what is happening.”
 
-Yueya Diary tries to reduce that uncertainty without creating constant interruptions between parents and caregivers.
+Yueya Diary tries to reduce that uncertainty without requiring parents to constantly message the caregiver throughout the day.
 
-## Why WeChat Mini Program
+A reliable record can sometimes provide reassurance without requiring continuous monitoring.
 
-The target users are Chinese families, so the WeChat Mini Program ecosystem is the most natural distribution channel.
+## Product Screenshots
 
-Advantages include:
+### 1. Daily Dashboard
 
-- no separate app installation;
-- familiar interaction model;
-- easy access through WeChat;
-- low friction for family members and caregivers;
-- suitable for private beta testing through experience users.
+![Yueya Diary home dashboard](assets/01-home-dashboard.png)
 
-## Current Status
+The home screen organises most daily activities into three simple categories: eating, sleeping and playing.
 
-The project has reached a working prototype / internal testing stage.
+Diaper changes and daily notes remain available as separate quick actions.
 
-Completed milestones include:
+The dashboard also gives parents a quick overview of feeding, sleep, unresolved questions and the chronological activity history for the day.
 
-- initial product requirements;
-- WeChat Mini Program development environment setup;
-- cloud environment configuration;
-- working preview in WeChat Developer Tools;
-- product rename from “小芽日记” to “悦芽日记”;
-- early external interest from a potential test user.
+### 2. Feeding Record
 
-## Screenshots
+![Record feeding in Yueya Diary](assets/02-record-feeding.png)
 
-Real product screenshots will be added here.
+The feeding workflow was designed around real childcare behaviour rather than using a generic form.
 
-Suggested screenshots:
+For example, milk volume is selected through structured values instead of arbitrary text entry.
 
-1. Home / daily record page
-2. Feeding and sleep tracking
-3. Daily history / review
-4. Data export or summary
-5. WeChat Mini Program preview
+The final digit is restricted to `0` or `5`, because bottle-feeding measurements such as 115 mL or 140 mL are realistic, while a value such as 113 mL usually implies precision that the bottle itself cannot provide.
+
+The interface also prevents users from selecting a future time for an event that has not happened yet.
+
+### 3. Parent–Caregiver Communication
+
+![Parent caregiver Q&A](assets/03-parent-caregiver-qa.png)
+
+One of the main differences between Yueya Diary and a standard baby-tracking application is the communication layer.
+
+Parents can raise questions about an individual childcare record, and the caregiver can respond directly within the same context.
+
+Instead of separating the discussion into another WeChat conversation, the question remains attached to the original event.
+
+That makes the history easier to review and reduces ambiguity later.
+
+## Key Product Decisions
+
+### Structured around "Eat, Sleep, Play"
+
+Instead of presenting caregivers with a long list of unrelated tracking functions, the first version groups most activities around three familiar parts of a baby's day:
+
+Eat → Sleep → Play
+
+This makes the main interface easier to understand and reduces the number of decisions required during routine use.
+
+### Designed for realistic data entry
+
+Inputs were designed around what a caregiver can realistically observe.
+
+The feeding-volume example is one small illustration: the product avoids creating false precision simply because software makes arbitrary numbers possible.
+
+### Preventing invalid records
+
+Time validation prevents a caregiver from accidentally recording an event in the future.
+
+This is a small constraint, but it improves data quality without adding extra work.
+
+### Two different user roles
+
+Parents and caregivers have different jobs inside the product.
+
+The caregiver's experience prioritises fast recording.
+
+The parent's experience prioritises review, questions and understanding what happened.
+
+### Family-level privacy
+
+The product is organised around a private family group.
+
+A parent creates the group and invites selected family members and caregivers.
+
+People outside the group cannot view that family's childcare records.
+
+### Record-level communication
+
+Questions stay attached to the relevant childcare event rather than becoming a separate generic conversation.
+
+This preserves context and creates a clearer historical record.
 
 ## Product Flow
 
@@ -118,62 +182,6 @@ Suggested screenshots:
 flowchart LR
     A[Caregiver records daily activity] --> B[Structured childcare data]
     B --> C[Parent reviews the day]
-    C --> D[Lower uncertainty]
-    D --> E[Long-term childcare history]
-```
-
-## What This Project Demonstrates
-
-This project is a product case study as much as a software project.
-
-It demonstrates:
-
-- identifying a real user problem;
-- converting an emotional pain point into a product requirement;
-- feature prioritisation;
-- product workflow design;
-- WeChat Mini Program development;
-- cloud setup and testing;
-- bilingual product communication;
-- iteration based on real-world feedback.
-
-## Language Strategy
-
-The application interface is intentionally Chinese-only.
-
-This repository uses English as the default documentation language so that international recruiters and collaborators can understand the product, while the actual interface remains in Chinese because that is the correct design choice for the target market.
-
-A full Chinese project description is also available in [README.zh-CN.md](README.zh-CN.md).
-
-## Next Steps
-
-Planned improvements include:
-
-- improve the daily recording experience;
-- refine historical data review;
-- test with additional families;
-- collect caregiver and parent feedback;
-- improve export and comparison features;
-- explore simple trend summaries for sleep, feeding and mood;
-- improve onboarding for new caregivers.
-
-## Repository Structure
-
-```text
-yueya-diary/
-├── README.md
-├── README.zh-CN.md
-├── docs/
-│   └── product-design.md
-├── assets/
-│   └── README.md
-└── .gitignore
-```
-
-## Note on Source Code
-
-This repository is currently used as a product portfolio / case study. The full production Mini Program source code is not published here at this stage.
-
----
-
-Built as a practical product experiment around childcare visibility, family communication and lightweight digital record keeping.
+    C --> D[Questions and responses stay attached to records]
+    D --> E[Lower uncertainty]
+    E --> F[Long-term childcare history]
